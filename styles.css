@@ -8,8 +8,8 @@ A simplified, uniform, and responsive stylesheet for Luong Dang's interactive re
    1. GLOBAL STYLES & VARIABLES
    ------------------- */
 :root {
-  --clr-primary: #000000;
-  --clr-light-gray: #f0f2f5;
+  --clr-primary: #000000e3;
+  --clr-light-gray: #aeaeaea1;
   --clr-surface: #ffffff;
   --clr-text: #1c1e21;
   --clr-text-secondary: #65676b;
