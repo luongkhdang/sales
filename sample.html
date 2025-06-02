@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Portfolio – Leslie Alexander</title>
+    <!-- Google Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Xx..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      :root {
+        --clr-bg: #f7f7f7;
+        --clr-surface: #ffffff;
+        --clr-text: #111111;
+        --clr-accent: #000000;
+        --radius: 18px;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--clr-bg);
+        color: var(--clr-text);
+        line-height: 1.5;
+      }
+
+      /* ────────────── APP BAR ────────────── */
+      header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background: var(--clr-surface);
+        border-bottom: 1px solid #e1e1e1;
+        z-index: 1000;
+        box-shadow: var(--shadow);
+      }
+
+      .app-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+      }
+
+      .app-bar__title {
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .icon-btn {
+        background: none;
+        border: none;
+        font-size: 1.25rem;
+        color: var(--clr-text);
+        cursor: pointer;
+      }
+
+      /* ────────────── TABS ────────────── */
+      .tabs {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.25rem 0.25rem 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .tab {
+        background: var(--clr-accent);
+        color: #fff;
+        font-size: 0.8rem;
+        padding: 0.35rem 0.9rem;
+        border-radius: 9999px;
+        cursor: pointer;
+        user-select: none;
+        transition: background 0.25s;
+        white-space: nowrap;
+      }
+
+      .tab.active,
+      .tab:hover {
+        background: #212121;
+      }
+
+      /* ────────────── LAYOUT WRAPPERS ────────────── */
+      .container {
+        width: 100%;
+        margin-inline: auto;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        max-width: 450px; /* mobile default */
+      }
+
+      .card {
+        background: var(--clr-surface);
+        border-radius: var(--radius);
+        padding: 1.25rem;
+        box-shadow: var(--shadow);
+      }
+
+      .card-header {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .profile-img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        display: inline-block;
+        padding: 0.5rem 1.3rem;
+        font-size: 0.85rem;
+        border-radius: 9999px;
+        border: none;
+        cursor: pointer;
+        transition: 0.25s ease;
+        text-decoration: none;
+      }
+
+      .btn-primary {
+        background: var(--clr-accent);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        opacity: 0.9;
+      }
+
+      .btn-secondary {
+        background: #fff;
+        border: 1px solid #bbb;
+      }
+
+      .btn-secondary:hover {
+        background: #f2f2f2;
+      }
+
+      h2.section-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        text-align: center;
+      }
+
+      /* ────────────── SKILLS TAGS ────────────── */
+      .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: flex-start;
+      }
+
+      .tag {
+        background: #000;
+        color: #fff;
+        padding: 0.25rem 0.8rem;
+        border-radius: 9999px;
+        font-size: 0.7rem;
+      }
+
+      /* ────────────── UTILITY ────────────── */
+      .flex {
+        display: flex;
+      }
+
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      .gap-1 {
+        gap: 1rem;
+      }
+
+      /* ────────────── DESKTOP LAYOUT ────────────── */
+      @media (min-width: 992px) {
+        .container {
+          flex-direction: row;
+          max-width: 1180px;
+          gap: 2rem;
+          padding: 2rem 1.5rem 3rem;
+        }
+
+        .column {
+          flex: 1 1 0;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .tabs {
+          padding-bottom: 1.5rem;
+        }
+
+        .card-header {
+          order: -1; /* keeps profile at top of first column */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!------------------------- APP BAR ------------------------->
+    <header>
+      <div class="app-bar">
+        <button class="icon-btn" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <span class="app-bar__title">Portfolio</span>
+        <button class="icon-btn" aria-label="Share">
+          <i class="fas fa-share-alt"></i>
+        </button>
+      </div>
+      <!-- Navigation Tabs -->
+      <div class="tabs" id="tabs">
+        <div class="tab active" data-section="about">About Me</div>
+        <div class="tab" data-section="experience">Experiences</div>
+        <div class="tab" data-section="services">Services</div>
+      </div>
+    </header>
+
+    <!------------------------- MAIN CONTENT ------------------------->
+    <main>
+      <!-- Mobile/Column Layout: Each section stacked vertically. Desktop: 3 Cols side‑by‑side -->
+      <div class="container">
+        <!-- ========= Column 1 ========= -->
+        <div class="column" id="col-1">
+          <!-- PROFILE CARD -->
+          <section class="card" id="profile">
+            <div class="card-header">
+              <img
+                src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=facearea&facepad=2.5&w=256&h=256&q=80"
+                alt="Leslie Alexander"
+                class="profile-img"
+              />
+              <h3>Hello,</h3>
+              <h2>I'm Leslie Alexander</h2>
+              <p
+                style="margin-top: 0.25rem; font-size: 0.9rem; font-weight: 500"
+              >
+                UI/UX DESIGNER
+              </p>
+              <div
+                class="flex gap-1"
+                style="margin-top: 1rem; justify-content: center"
+              >
+                <a href="#contact" class="btn-primary">Hire Me</a>
+                <a href="#" class="btn-secondary">Download CV</a>
+              </div>
+            </div>
+            <h2 class="section-title">About Me</h2>
+            <p style="font-size: 0.85rem; text-align: justify">
+              I'm a UI/UX Designer for website, android and iOS devices with the
+              help of the design tool <strong>Figma</strong>. I also like
+              prototyping and wireframing which helps me through interaction
+              models and new possibilities. If you have any query contact me and
+              I will try my best to show your problem result as soon as
+              possible.
+            </p>
+          </section>
+
+          <!-- CONTACT CARD (mobile shows at bottom) -->
+          <section class="card" id="contact" style="margin-top: auto">
+            <h2 class="section-title">Let’s Talk</h2>
+            <p style="font-size: 0.85rem; text-align: center">
+              If you have any unique idea for a project in your mind, contact
+              me.
+            </p>
+            <div style="margin: 1rem 0; text-align: center">
+              <a
+                href="tel:+484065550120"
+                style="text-decoration: none; color: inherit"
+              >
+                <i class="fas fa-phone"></i> +48 (406) 555‑0120
+              </a>
+              <br />
+              <a
+                href="mailto:lessliealexander@example.com"
+                style="text-decoration: none; color: inherit"
+              >
+                <i class="fas fa-envelope"></i> lessliealexander@example.com
+              </a>
+            </div>
+            <div class="flex gap-1" style="justify-content: center">
+              <a href="#" class="icon-btn"><i class="fab fa-behance"></i></a>
+              <a href="#" class="icon-btn"><i class="fab fa-dribbble"></i></a>
+              <a href="#" class="icon-btn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="icon-btn"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="icon-btn"><i class="fab fa-instagram"></i></a>
+            </div>
+          </section>
+        </div>
+
+        <!-- ========= Column 2 ========= -->
+        <div class="column" id="col-2">
+          <!-- SERVICES -->
+          <section class="card" id="services">
+            <h2 class="section-title">Services</h2>
+            <p style="font-size: 0.85rem; text-align: justify">
+              If you want to make software for your business, contact me. I make
+              it as soon as possible. You really like my work, if you don't I'll
+              change it until you like it.
+            </p>
+
+            <div class="flex gap-1" style="flex-wrap: wrap; margin-top: 1rem">
+              <div class="card" style="flex: 1 1 150px; padding: 1rem">
+                <h3
+                  style="
+                    font-size: 0.95rem;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                  "
+                >
+                  UI/UX Designer
+                </h3>
+                <p style="font-size: 0.78rem">
+                  User interface design or user interface engineering is the
+                  design of user interfaces for machines and software.
+                </p>
+                <button class="btn-secondary" style="margin-top: 0.75rem">
+                  Read More
+                </button>
+              </div>
+
+              <div class="card" style="flex: 1 1 150px; padding: 1rem">
+                <h3
+                  style="
+                    font-size: 0.95rem;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                  "
+                >
+                  Web Designer
+                </h3>
+                <p style="font-size: 0.78rem">
+                  Web design refers to the design of websites that are displayed
+                  on the Internet.
+                </p>
+                <button class="btn-secondary" style="margin-top: 0.75rem">
+                  Read More
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- SKILLS -->
+          <section class="card" id="skills">
+            <h2 class="section-title">Other Skills</h2>
+            <div class="tag-cloud">
+              <span class="tag">Adobe XD</span>
+              <span class="tag">Adobe Photoshop</span>
+              <span class="tag">Adobe InDesign</span>
+              <span class="tag">Adobe Illustrator</span>
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+            </div>
+          </section>
+        </div>
+
+        <!-- ========= Column 3 ========= -->
+        <div class="column" id="col-3">
+          <!-- EXPERIENCE -->
+          <section class="card" id="experience">
+            <h2 class="section-title">Work Experience</h2>
+            <div
+              style="
+                font-size: 0.85rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+              "
+            >
+              <!-- Job 1 -->
+              <div>
+                <h3 style="font-size: 0.95rem; font-weight: 600">
+                  Graphic Designer
+                </h3>
+                <p>Exela Technologies Private Ltd</p>
+                <p style="font-size: 0.75rem; color: #555">
+                  Sept 2016 – Jul 2018 • United Kingdom
+                </p>
+                <p style="font-size: 0.78rem">
+                  Designed print and web applications for Pau Brasil, Renault,
+                  Kia.
+                </p>
+              </div>
+              <!-- Job 2 -->
+              <div>
+                <h3 style="font-size: 0.95rem; font-weight: 600">
+                  UI Designer
+                </h3>
+                <p>Apprails zehty Ltd</p>
+                <p style="font-size: 0.75rem; color: #555">
+                  Sept 2018 – Jul 2020 • United Kingdom
+                </p>
+                <p style="font-size: 0.78rem">
+                  Designed mobile UI applications; prototyping.
+                </p>
+              </div>
+              <!-- Job 3 -->
+              <div>
+                <h3 style="font-size: 0.95rem; font-weight: 600">
+                  Senior UI/UX Designer
+                </h3>
+                <p>Snapic Consultancy Services</p>
+                <p style="font-size: 0.75rem; color: #555">
+                  Sept 2020 – Present • United States
+                </p>
+                <p style="font-size: 0.78rem">
+                  Communicate with SEO and work on powerful projects,
+                  prototyping, user research, sketches, share interaction and
+                  experience with junior designers.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!---------------------------- JS ---------------------------->
+    <script>
+      // Simple tab activation (scroll to section + highlight active)
+      document.querySelectorAll(".tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const sectionId = tab.dataset.section;
+
+          // Scroll smoothly
+          const target = document.getElementById(sectionId);
+          if (target)
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+          // Toggle active state
+          document
+            .querySelectorAll(".tab")
+            .forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+        });
+      });
+
+      // Observer to highlight tab when section enters viewport
+      const options = { root: null, threshold: 0.4 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            document.querySelectorAll(".tab").forEach((t) => {
+              if (t.dataset.section === id) t.classList.add("active");
+              else t.classList.remove("active");
+            });
+          }
+        });
+      }, options);
+
+      ["about", "experience", "services"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

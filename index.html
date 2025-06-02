@@ -1,185 +1,336 @@
-<!--
-index.html
-
-Purpose: Simple HTML page to display the sales-resume.pdf resume in-browser and its plain text version extracted from nontech.tex.
-Exports: None (static HTML file)
-Related files: sales-resume.pdf (displayed PDF), nontech.tex (source for the PDF text), styles.css (CSS styling)
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luong Dang - Sales Resume</title>
+    <title>Luong Dang - Interactive Sales Resume</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8UoGIt0VOKvqz4vsDONArCFwEXqqEQOo6Rjk8LGBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="pdf-container">
-      <embed
-        src="sales-resume.pdf"
-        type="application/pdf"
-        width="80%"
-        height="100%"
-      />
-    </div>
-    <div class="text-container">
-      <h1>Luong Dang</h1>
-      <p>
-        (510)-541-8379 | luongdang0701@gmail.com | linkedin.com/in/luong-dang |
-        github.com/luongkhdang
-      </p>
+    <header class="app-header">
+      <div class="app-bar">
+        <span class="app-bar-title">Luong Dang</span>
+        <div class="app-bar-actions">
+          <button class="icon-btn" aria-label="Share">
+            <i class="fas fa-share-alt"></i>
+          </button>
+        </div>
+      </div>
+      <div class="tabs">
+        <div class="tab active" data-page="about">About Me</div>
+        <div class="tab" data-page="resume">Resume</div>
+      </div>
+    </header>
 
-      <h2>About</h2>
-      <p>
-        A highly motivated and results-driven insurance professional with a
-        proven track record of exceeding sales targets and delivering
-        exceptional member experiences within AAA - The Auto Club of Southern
-        California. Consistently ranked in the top 3% of 255 agents (peaking at
-        #1 of 255 in Jan-Feb 2024) and recognized with "Diamond Club" status for
-        achieving 100% accuracy in a fast-paced environment. Expertise spans the
-        full sales cycle, from proactive lead generation and advanced
-        consultative selling techniques for Property & Casualty and Life
-        insurance to policy servicing and member retention. Eager to leverage
-        deep product knowledge, a data-driven approach to sales optimization,
-        and a strong commitment to AAA's mission of creating Members for life by
-        rejoining the team and contributing to its continued success.
-      </p>
+    <main>
+      <div class="page active" id="about-page">
+        <div class="container">
+          <div class="column">
+            <section class="card profile-card">
+              <div class="profile-header">
+                <div class="profile-picture-container">
+                  <img
+                    src="profile-picture.jpg"
+                    alt="Luong Dang"
+                    class="profile-img"
+                  />
+                </div>
+                <div class="profile-contact">
+                  <a href="tel:5105418379" class="contact-item"
+                    ><i class="fas fa-phone"></i>(510) 541-8379</a
+                  >
+                  <a href="mailto:luongdang0701@gmail.com" class="contact-item"
+                    ><i class="fas fa-envelope"></i>luongdang0701@gmail.com</a
+                  >
+                  <div class="contact-item-group">
+                    <a
+                      href="https://linkedin.com/in/luong-dang"
+                      target="_blank"
+                      class="contact-item"
+                      ><i class="fab fa-linkedin"></i>LinkedIn</a
+                    >
+                    <a
+                      href="https://github.com/luongkhdang"
+                      target="_blank"
+                      class="contact-item"
+                      ><i class="fab fa-github"></i>GitHub</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="profile-title">
+                <h3>Hello,</h3>
+                <h2>I'm Luong Dang</h2>
+                <p class="subtitle">INSURANCE PROFESSIONAL & SALES LEADER</p>
+              </div>
+              <div class="profile-actions">
+                <a href="mailto:luongdang0701@gmail.com" class="btn btn-primary"
+                  >Hire Me</a
+                >
+                <a href="sales-resume.pdf" class="btn btn-secondary" download
+                  >Download CV</a
+                >
+              </div>
+            </section>
 
-      <h2>Education</h2>
-      <p><strong>San Francisco State University</strong> San Francisco, CA</p>
-      <p>Bachelor of Science in Computer Science GPA: 3.64</p>
-      <p><strong>License</strong></p>
-      <p>
-        License number: 4209877. Personal Lines (expire: 05/31/2026) and Life
-        (expire: 05/31/2026)
-      </p>
+            <section class="card">
+              <h2 class="card-title">Let's Talk</h2>
+              <p class="centered-text">
+                I'm always looking for new opportunities to grow, learn and make
+                a lot of money.
+              </p>
+              <div class="card-actions">
+                <a href="mailto:luongdang0701@gmail.com" class="btn btn-primary"
+                  ><i class="fas fa-envelope"></i> Get In Touch</a
+                >
+                <a href="tel:5105418379" class="btn btn-secondary"
+                  ><i class="fas fa-phone"></i> Call Me</a
+                >
+              </div>
+            </section>
+          </div>
 
-      <h2>Technical Skills</h2>
-      <p>
-        <strong>Professional:</strong> Strong Work Ethic, Data Analysis,
-        Problem-Solving, Initiative, Communication (Verbal & Written), Team
-        Collaboration, High Professional Standards, Customer Service Excellence,
-        Profit-Driven Mindset
-      </p>
-      <p>
-        <strong>Insurance & Sales:</strong> Property & Casualty Insurance, Life
-        Insurance, Consultative Selling, Lead Generation, Prospecting, Closing
-        Sales, Member Retention, Underwriting Principles, Objection Handling,
-        Customer Relationship Management (CRM), Cross-Selling/Up-Selling, Risk
-        Assessment, Policy Issuance, Outbound Calling, Marketing Lists
-      </p>
-      <p>
-        <strong>Systems & Software:</strong> CRM: Salesforce (Proficient:
-        including workflow optimization and user feedback for integration)
-      </p>
-      <p>
-        <strong>Microsoft Office Suite:</strong> MS Excel (Advanced: data
-        analysis, reporting, tracking), MS Outlook (Proficient), MS Word, MS
-        PowerPoint
-      </p>
-      <p>
-        <strong>Insurance Platforms:</strong> Proficient in navigating and
-        utilizing various internal insurance quoting, policy administration, and
-        member management systems
-      </p>
-      <p>
-        <strong>Data Analysis Tools:</strong> Leveraging CS background for sales
-        data interpretation
-      </p>
+          <div class="column">
+            <section class="card">
+              <h2 class="card-title">About Me</h2>
+              <p>
+                A highly motivated and results-driven insurance professional
+                with a proven track record of exceeding sales targets and
+                delivering exceptional member experiences. Consistently ranked
+                in the top 3% of 255 agents and recognized with
+                <strong>"Diamond Club"</strong> status. Eager to leverage deep
+                product knowledge and a data-driven approach to sales
+                optimization.
+              </p>
+            </section>
 
-      <h2>Experience</h2>
-      <h3>Operations Manager</h3>
-      <p><em>Kim Tin Jewelry</em> Oakland, CA | Oct 2024 – Present</p>
-      <ul>
-        <li>
-          Modernized retail operations by designing and implementing automation
-          solutions, significantly improving operational efficiency by cutting
-          manual workload by an estimated 70%
-        </li>
-        <li>
-          Applied top-tier sales execution strategies, informed by previous
-          success at AAA, to drive tangible business results and customer base
-          growth.
-        </li>
-        <li>
-          Managed inventory, customer relations, and vendor interactions,
-          directly impacting supply chain efficiency and customer satisfaction.
-        </li>
-        <li>
-          Launched data-driven digital marketing campaigns using social media to
-          demonstrably grow the customer base.
-        </li>
-      </ul>
+            <section class="card">
+              <h2 class="card-title">Key Skills</h2>
+              <div class="tag-cloud">
+                <span class="tag">Insurance Sales</span>
+                <span class="tag">Salesforce CRM</span>
+                <span class="tag">Data Analysis</span>
+                <span class="tag">Customer Service</span>
+                <span class="tag">Lead Generation</span>
+                <span class="tag">Team Leadership</span>
+              </div>
+            </section>
 
-      <h3>Insurance Agent (Sales)</h3>
-      <p>
-        <em>AAA – The Auto Club of Southern California</em> Costa Mesa, CA | Apr
-        2022 – Sep 2024
-      </p>
-      <ul>
-        <li>
-          Achieved top 3% sales ranking among 255 agents, peaking at #1 in
-          Jan-Feb 2024, and earned "Diamond Club" status for consistent high
-          performance and 100% policy accuracy.
-        </li>
-        <li>
-          Managed the complete sales cycle for Personal Lines (Home and
-          Automotive) and Life insurance, including prospecting, lead
-          generation, conducting customer-specific needs analysis, presenting
-          tailored solutions, closing sales, and retaining insured members.
-        </li>
-        <li>
-          Utilized advanced consultative selling techniques and thorough product
-          knowledge to effectively identify member needs, overcome objections,
-          and secure new business, consistently meeting or exceeding sales
-          targets.
-        </li>
-        <li>
-          Conducted comprehensive insurance reviews, assessed risk using
-          provided tools and underwriting guidelines, and accurately quoted,
-          bound, and issued policies.
-        </li>
-        <li>
-          Played a key role in the Salesforce CRM integration, applying systems
-          knowledge to provide actionable user feedback that improved workflow
-          design and enhanced team adoption.
-        </li>
-        <li>
-          Proactively solicited new business through outbound calling, working
-          marketing lists, and cross-selling/up-selling to new and existing
-          customers, contributing to the overall growth of the insurance book of
-          business.
-        </li>
-        <li>
-          Established strong rapport with insured members, enhancing affinity to
-          the AAA brand and fostering member satisfaction and loyalty.
-        </li>
-        <li>
-          Demonstrated strong problem-solving and initiative by identifying and
-          resolving process inefficiencies, directly contributing to team
-          performance and recognition as "Team of the Year Regional."
-        </li>
-        <li>
-          Researched and resolved complex customer service issues, often
-          assisting insureds in initiating the first notice of loss on claims.
-        </li>
-        <li>
-          Leveraged a Computer Science background to apply data analysis
-          techniques for optimizing sales processes and identifying key growth
-          drivers.
-        </li>
-      </ul>
+            <section class="card">
+              <h2 class="card-title">Key Achievements</h2>
+              <div class="list-container">
+                <div class="list-item">
+                  <h3>Top Performer</h3>
+                  <p>
+                    Ranked #1 out of 255 agents in Jan-Feb 2024, consistently in
+                    top 3%.
+                  </p>
+                </div>
+                <div class="list-item">
+                  <h3>Diamond Club Member</h3>
+                  <p>
+                    Achieved 100% accuracy and exceptional performance
+                    standards.
+                  </p>
+                </div>
+                <div class="list-item">
+                  <h3>Team of the Year</h3>
+                  <p>Contributed to regional team recognition in 2022.</p>
+                </div>
+              </div>
+            </section>
 
-      <h2>Award</h2>
-      <p>
-        <strong>Insurance agent (Sales)</strong> |
-        <em>AAA of Southern California</em> | Apr 2022- Sep 2024
-      </p>
-      <ul>
-        <li>Rookie of the month - Dec 2023</li>
-        <li>Team of the year - 2022</li>
-        <li>Diamond Club - Most of 2023 and all of 2024</li>
-      </ul>
-    </div>
+            <section class="card">
+              <h2 class="card-title">Education & Licenses</h2>
+              <div class="list-container">
+                <div class="list-item">
+                  <h3>San Francisco State University</h3>
+                  <p>Bachelor of Science in Computer Science | GPA: 3.64</p>
+                </div>
+                <div class="list-item">
+                  <h3>Insurance Licenses</h3>
+                  <p>
+                    Personal Lines & Life (#4209877) - Valid until 05/31/2026
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="resume-page">
+        <div class="container single-column">
+          <section class="card resume-card">
+            <div class="resume-header">
+              <h2 class="card-title">Resume</h2>
+            </div>
+
+            <div class="resume-content">
+              <div class="resume-main-header">
+                <h1>Luong Dang</h1>
+                <p>
+                  (510) 541-8379 | luongdang0701@gmail.com |
+                  linkedin.com/in/luong-dang
+                </p>
+              </div>
+              <div class="resume-section download-resume-btn">
+                <a
+                  href="sales-resume.pdf"
+                  class="btn btn-primary resume-download-btn-with-preview"
+                  download="LuongDang_Sales_Resume.pdf"
+                >
+                  <span class="btn-text-content">
+                    <i class="fas fa-download"></i> Download Full Resume
+                  </span>
+                  <iframe
+                    class="resume-preview-iframe"
+                    src="sales-resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                    title="Resume Preview"
+                  ></iframe>
+                </a>
+              </div>
+              <div class="resume-section">
+                <h1>Highlights:</h1>
+                <h2>About</h2>
+                <p>
+                  A highly motivated and results-driven insurance professional
+                  with a proven track record of exceeding sales targets and
+                  delivering exceptional member experiences within AAA - The
+                  Auto Club of Southern California. Consistently ranked in the
+                  top 3% of 255 agents (peaking at #1 of 255 in Jan-Feb 2024)
+                  and recognized with "Diamond Club" status for achieving 100%
+                  accuracy in a fast-paced environment. Eager to leverage deep
+                  product knowledge, a data-driven approach to sales
+                  optimization, and a strong commitment to creating Members for
+                  life.
+                </p>
+              </div>
+
+              <div class="resume-section">
+                <h2>Experience</h2>
+                <div class="resume-job">
+                  <h3>Operations Manager</h3>
+                  <p class="job-meta">
+                    Kim Tin Jewelry | Oakland, CA | Oct 2024 – Present
+                  </p>
+                  <ul>
+                    <li>
+                      Modernized retail operations by designing and implementing
+                      automation solutions, improving efficiency by ~70%.
+                    </li>
+                    <li>
+                      Applied top-tier sales execution strategies to drive
+                      tangible business results.
+                    </li>
+                    <li>
+                      Managed inventory, customer relations, and vendor
+                      interactions.
+                    </li>
+                  </ul>
+                </div>
+                <div class="resume-job">
+                  <h3>Insurance Agent (Sales)</h3>
+                  <p class="job-meta">
+                    AAA – The Auto Club of Southern California | Costa Mesa, CA
+                    | Apr 2022 – Sep 2024
+                  </p>
+                  <ul>
+                    <li>
+                      Achieved top 3% sales ranking among 255 agents and earned
+                      "Diamond Club" status.
+                    </li>
+                    <li>
+                      Managed the complete sales cycle for Personal Lines and
+                      Life insurance.
+                    </li>
+                    <li>
+                      Utilized advanced consultative selling techniques to
+                      consistently exceed sales targets.
+                    </li>
+                    <li>
+                      Played a key role in the Salesforce CRM integration by
+                      providing actionable user feedback.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="resume-section">
+                <h2>Education</h2>
+                <div class="resume-job">
+                  <h3>San Francisco State University</h3>
+                  <p class="job-meta">
+                    Bachelor of Science in Computer Science | GPA: 3.64
+                  </p>
+                </div>
+              </div>
+
+              <div class="resume-section">
+                <h2>Technical Skills</h2>
+                <p>
+                  <strong>Insurance & Sales:</strong> Property & Casualty, Life
+                  Insurance, Consultative Selling, Lead Generation, CRM,
+                  Cross-Selling, Risk Assessment.
+                </p>
+                <p>
+                  <strong>Systems & Software:</strong> Salesforce, MS Excel
+                  (Advanced), MS Office Suite, Various Insurance Platforms.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const tabs = document.querySelectorAll(".tab");
+        const pages = document.querySelectorAll(".page");
+
+        function switchPage(pageName) {
+          pages.forEach((page) => page.classList.remove("active"));
+          const targetPage = document.getElementById(pageName + "-page");
+          if (targetPage) {
+            targetPage.classList.add("active");
+          }
+
+          tabs.forEach((tab) => tab.classList.remove("active"));
+          const activeTab = document.querySelector(`[data-page="${pageName}"]`);
+          if (activeTab) {
+            activeTab.classList.add("active");
+          }
+
+          // No hash update needed for this simple design, but can be re-added if desired.
+          // history.pushState(null, null, "#" + pageName);
+        }
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            const pageName = tab.dataset.page;
+            switchPage(pageName);
+          });
+        });
+
+        // Default to the 'about' page on load
+        switchPage("about");
+      });
+    </script>
   </body>
 </html>
