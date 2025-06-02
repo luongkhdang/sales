@@ -1,0 +1,215 @@
+%----------------------------------------------------------------------------------------
+% HEADER COMMENT
+%----------------------------------------------------------------------------------------
+% Purpose: LaTeX template for Luong Dang's resume.
+%          Generates a PDF resume. Content is defined within this .tex file.
+% Key Details: Uses standard article class, common LaTeX packages for formatting.
+%              Defines custom commands for resume sections (\resumeSubheading, etc.).
+% Related Files: None (Content is hardcoded in this .tex file)
+%----------------------------------------------------------------------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+%----------------------------------------------------------------------------------------
+% PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{latexsym}
+\usepackage[empty]{fullpage} % Use full page
+\usepackage{titlesec} % Allows customization of titles
+\usepackage{marvosym} % Required for symbols like phone/email
+\usepackage[usenames,dvipsnames]{color} % Allows using color names
+\usepackage{verbatim} % Allows environments for comments
+\usepackage{enumitem} % Customize lists
+\usepackage[hidelinks]{hyperref} % For clickable links (email, linkedin, github)
+\usepackage{fancyhdr} % To manage headers/footers (empty here)
+\usepackage[english]{babel}
+\usepackage{tabularx} % For tables with adjustable column widths
+\usepackage{ragged2e} % For \justifying text in About section
+\input{glyphtounicode} % Ensure PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%----------------------------------------------------------------------------------------
+% FONT OPTIONS (Comment out unused ones)
+%----------------------------------------------------------------------------------------
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+\usepackage[default]{sourcesanspro} % Example: Using Source Sans Pro
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+%----------------------------------------------------------------------------------------
+% PAGE STYLE & MARGINS
+%----------------------------------------------------------------------------------------
+\pagestyle{fancy} % Use fancyhdr page style
+\fancyhf{} % Clear all header and footer fields
+\fancyfoot{} % Clear footer
+\renewcommand{\headrulewidth}{0pt} % No header rule
+\renewcommand{\footrulewidth}{0pt} % No footer rule
+
+% Adjust margins (tightened further)
+\addtolength{\oddsidemargin}{-0.75in} % Was -0.6in
+\addtolength{\evensidemargin}{-0.75in} % Was -0.6in
+\addtolength{\textwidth}{1.5in} % Was 1.2in
+\addtolength{\topmargin}{-.75in} % Was -0.6in
+\addtolength{\textheight}{1.5in} % Was 1.2in
+
+\urlstyle{same} % Keep URL style consistent
+\raggedbottom % Prevent extra vertical space stretching
+\raggedright % Right align text (standard resume format)
+\setlength{\tabcolsep}{0in} % Remove padding between table columns
+
+%----------------------------------------------------------------------------------------
+% SECTION FORMATTING
+%----------------------------------------------------------------------------------------
+\titleformat{\section}{
+  \vspace{-8pt}\scshape\raggedright\large % Format: Small caps, ragged right, large font (vspace adjusted from -6pt)
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}] % Add a horizontal rule under section title (vspace adjusted from -7pt)
+
+%----------------------------------------------------------------------------------------
+% CUSTOM COMMANDS -- ADJUSTED SPACING
+%----------------------------------------------------------------------------------------
+% Command for resume item (bullet point)
+\newcommand{\resumeItem}[1]{
+  \item\small{ {#1 \vspace{-2pt}} } % Small font, space below (vspace adjusted from -4pt)
+}
+
+% Command for subheading (e.g., Job Title, University)
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item % vspace adjusted from -3pt
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-6pt} % Space after subheading (vspace adjusted from -8pt)
+}
+
+% Command for project heading
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{-3pt}\item % vspace adjusted from -3pt
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & \small #2 \\
+  \end{tabular*}\vspace{-5pt} % vspace adjusted from -8pt
+}
+
+% Command for item lists (like bullet points under a job)
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}} % vspace adjusted from -7pt (Major change for overlap)
+
+% Command for sub-heading lists (groups sections like Education, Experience)
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+% Customize bullet points for nested lists
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+%----------------------------------------------------------------------------------------
+% BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+% HEADING
+%----------------------------------------------------------------------------------------
+\begin{center}
+    \textbf{\Huge \scshape Luong Dang} \\ \vspace{1pt} % Name
+    \small % Contact info
+    (510)-541-8379 $|$
+    \href{mailto:luongdang0701@gmail.com}{\underline{luongdang0701@gmail.com}} $|$
+    \href{https://linkedin.com/in/luong-dang}{\underline{linkedin.com/in/luong-dang}} $|$
+    \href{https://github.com/luongkhdang}{\underline{github.com/luongkhdang}}
+\end{center}
+
+%----------------------------------------------------------------------------------------
+% ABOUT
+%----------------------------------------------------------------------------------------
+\section{About}
+\begin{itemize}[leftmargin=0.15in, label={}, topsep=0pt, partopsep=0pt, itemsep=0pt, parsep=0pt] % Match indentation and reduce spacing
+    \item \small{\justifying % Justify the text in the About section
+A highly motivated and results-driven insurance professional with a proven track record of exceeding sales targets and delivering exceptional member experiences within AAA - The Auto Club of Southern California. Consistently ranked in the top 3\% of 255 agents (peaking at \#1 of 255 in Jan-Feb 2024) and recognized with "Diamond Club" status for achieving 100\% accuracy in a fast-paced environment. Expertise spans the full sales cycle, from proactive lead generation and advanced consultative selling techniques for Property \& Casualty and Life insurance to policy servicing and member retention. Eager to leverage deep product knowledge, a data-driven approach to sales optimization, and a strong commitment to AAA's mission of creating Members for life by rejoining the team and contributing to its continued success.
+    } % End \small and \justifying
+\end{itemize}
+\vspace{-10pt} % Adjust this value to reduce space after the About section if needed
+
+%----------------------------------------------------------------------------------------
+% EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\resumeSubHeadingListStart
+    \resumeSubheading
+      {San Francisco State University}{San Francisco, CA}
+      {Bachelor of Science in Computer Science}{GPA: 3.64} % Degree and GPA
+    \vspace{1pt} % ADDED: Small positive space to prevent coursework overlap
+    \resumeSubheading % Relevant coursework subheading
+      {License}{} % No date/location needed
+      {License number: 4209877. Personal Lines (expire: 05/31/2026) and Life (expire: 05/31/2026)}{} % List courses
+\resumeSubHeadingListEnd
+
+%----------------------------------------------------------------------------------------
+% TECHNICAL SKILLS
+%----------------------------------------------------------------------------------------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}] % Removed leading spaces
+    \small{\item{ % Group skills into categories
+        \textbf{Professional}{: Strong Work Ethic, Data Analysis, Problem-Solving, Initiative, Communication (Verbal \& Written), Team Collaboration, High Professional Standards, Customer Service Excellence, Profit-Driven Mindset}\\
+        \textbf{Insurance \& Sales}{: Property \& Casualty Insurance, Life Insurance, Consultative Selling, Lead Generation, Prospecting, Closing Sales, Member Retention, Underwriting Principles, Objection Handling, Customer Relationship Management (CRM), Cross-Selling/Up-Selling, Risk Assessment, Policy Issuance, Outbound Calling, Marketing Lists}\\
+        \textbf{Systems \& Software}{: CRM: Salesforce (Proficient: including workflow optimization and user feedback for integration)} \\
+        \textbf{Microsoft Office Suite}{: MS Excel (Advanced: data analysis, reporting, tracking), MS Outlook (Proficient), MS Word, MS PowerPoint} \\
+        \textbf{Insurance Platforms}{:  Proficient in navigating and utilizing various internal insurance quoting, policy administration, and member management systems} \\
+        \textbf{Data Analysis Tools}{:Leveraging CS background for sales data interpretation} \\
+    }}
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Experience}
+\resumeSubHeadingListStart % Removed leading spaces
+    % Job 1
+    \resumeSubheading
+      {Operations Manager}{Oct 2024 – Present}
+      {Kim Tin Jewelry}{Oakland, CA}
+      \resumeItemListStart
+        \resumeItem{Modernized retail operations by designing and implementing automation solutions, significantly improving operational efficiency by cutting manual workload by an estimated 70\%}
+        \resumeItem{Applied top-tier sales execution strategies, informed by previous success at AAA, to drive tangible business results and customer base growth.}
+        \resumeItem{Managed inventory, customer relations, and vendor interactions, directly impacting supply chain efficiency and customer satisfaction.}
+        \resumeItem{Launched data-driven digital marketing campaigns using social media to demonstrably grow the customer base.}
+      \resumeItemListEnd
+
+    % Job 2
+    \resumeSubheading
+      {Insurance Agent (Sales)}{Apr 2022 – Sep 2024}
+      {AAA – The Auto Club of Southern California}{Costa Mesa, CA}
+      \resumeItemListStart
+        \resumeItem{Achieved top 3\% sales ranking among 255 agents, peaking at \#1 in Jan-Feb 2024, and earned "Diamond Club" status for consistent high performance and 100\% policy accuracy.}
+        \resumeItem{Managed the complete sales cycle for Personal Lines (Home and Automotive) and Life insurance, including prospecting, lead generation, conducting customer-specific needs analysis, presenting tailored solutions, closing sales, and retaining insured members.}
+        \resumeItem{Utilized advanced consultative selling techniques and thorough product knowledge to effectively identify member needs, overcome objections, and secure new business, consistently meeting or exceeding sales targets.}
+        \resumeItem{Conducted comprehensive insurance reviews, assessed risk using provided tools and underwriting guidelines, and accurately quoted, bound, and issued policies.}
+        \resumeItem{Played a key role in the Salesforce CRM integration, applying systems knowledge to provide actionable user feedback that improved workflow design and enhanced team adoption.}
+        \resumeItem{Proactively solicited new business through outbound calling, working marketing lists, and cross-selling/up-selling to new and existing customers, contributing to the overall growth of the insurance book of business.}
+        \resumeItem{Established strong rapport with insured members, enhancing affinity to the AAA brand and fostering member satisfaction and loyalty.}
+        \resumeItem{Demonstrated strong problem-solving and initiative by identifying and resolving process inefficiencies, directly contributing to team performance and recognition as "Team of the Year Regional."}        
+        \resumeItem{Researched and resolved complex customer service issues, often assisting insureds in initiating the first notice of loss on claims.}
+        \resumeItem{Leveraged a Computer Science background to apply data analysis techniques for optimizing sales processes and identifying key growth drivers.}
+      \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%----------------------------------------------------------------------------------------
+% PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Award}
+\resumeSubHeadingListStart % Removed leading spaces
+    % Project 1
+    \resumeProjectHeading
+      {\textbf{Insurance agent (Sales)} $|$ \emph{AAA of Southern California}}{Apr 2022- Sep 2024}
+      \resumeItemListStart
+        \resumeItem{Rookie of the month - Dec 2023}
+        \resumeItem{Team of the year - 2022}
+        \resumeItem{Diamond Club - Most of 2023 and all of 2024}
+      \resumeItemListEnd
+ 
+\resumeSubHeadingListEnd
+
+%----------------------------------------------------------------------------------------
+% END DOCUMENT
+%----------------------------------------------------------------------------------------
+\end{document}
