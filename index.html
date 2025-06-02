@@ -3,7 +3,7 @@ index.html
 
 Purpose: Simple HTML page to display the sales-resume.pdf resume in-browser and its plain text version extracted from nontech.tex.
 Exports: None (static HTML file)
-Related files: sales-resume.pdf (displayed PDF), nontech.tex (source for the PDF text)
+Related files: sales-resume.pdf (displayed PDF), nontech.tex (source for the PDF text), styles.css (CSS styling)
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -11,61 +11,7 @@ Related files: sales-resume.pdf (displayed PDF), nontech.tex (source for the PDF
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luong Dang - Sales Resume</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background: #f4f4f4;
-        font-family: sans-serif;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-      }
-      .pdf-container {
-        height: 50vh; /* Adjusted height */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #e0e0e0; /* Different background for visual separation */
-        padding: 10px;
-        box-sizing: border-box;
-      }
-      embed,
-      iframe {
-        border: 1px solid #ccc;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        background: #fff;
-        width: 90%; /* Adjusted width for better fit */
-        height: calc(100% - 20px); /* Adjust height to fit padding */
-      }
-      .text-container {
-        height: 50vh; /* Adjusted height */
-        overflow-y: auto; /* Allow scrolling for text content */
-        padding: 20px;
-        background: #ffffff;
-        border-top: 2px solid #ccc;
-        box-sizing: border-box;
-        white-space: pre-wrap; /* Preserve whitespace and line breaks */
-      }
-      h1,
-      h2,
-      h3 {
-        margin-top: 0.5em;
-        margin-bottom: 0.2em;
-      }
-      p {
-        margin-top: 0.1em;
-        margin-bottom: 0.1em;
-      }
-      ul {
-        padding-left: 20px;
-        margin-top: 0.1em;
-        margin-bottom: 0.1em;
-      }
-      li {
-        margin-bottom: 0.2em;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="pdf-container">
